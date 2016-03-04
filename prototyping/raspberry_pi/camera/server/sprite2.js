@@ -36,7 +36,7 @@ function Sprite (options) {
 
 // главная функция
 Sprite.prototype.loop = function (){
-
+    this.clear_rect(); //предварительно очищаем область
     if (this.sprite_end === false) {
             this.way(); // функция изменения расположения
             this.scorer(); // скорость перемещения (счетчик)
@@ -45,21 +45,22 @@ Sprite.prototype.loop = function (){
         }
 };
 
-// функция - счетчик для изменения кадров (и еще чего-нибудь)
-Sprite.prototype.scorer = function () {
-
+Sprite.prototype.clear_rect = function () {
+    //нужно запускать до изменения координат x_start, y_start
     var self = this;
-    if (self.count < 50){ //может быть косяк в названии с переменной (такая же функция)
-        self.count += 1;
-    }
-    else{
-        self.count = 0;
-    }
+    self.context.clearRect(
+            //выбор положения
+            self.x_start, // координаты придут с функции по перемещению
+            self.y_start,
+            self.width / self.numberOfFrames,
+            self.height
+    );
 };
 
 //функция изменения пути спрайта
 Sprite.prototype.way = function() {
     var self = this;
+
     //если i < длинны массива, то будет выполняться
     if (self.i + 1 < self.path_points.length){ //если больше, то точка не будет перемещаться
         // перемещение точки по dx
@@ -90,25 +91,22 @@ Sprite.prototype.way = function() {
                 if (self.is_dying_because_of_the_way === true)
                 {
                     self.sprite_end = true;
+                    self.clear_rect(); // TODO
                 }
             }
         }
     }
 };
 
-Sprite.prototype.update = function () {
+// функция - счетчик для изменения кадров (и еще чего-нибудь)
+Sprite.prototype.scorer = function () {
+
     var self = this;
-    if (self.count % 4 == 0) { // задается скорость вращения
-        self.frameIndex += 1;
-
-        if (self.frameIndex > self.numberOfFrames - 1) {
-            if (self.is_dying_because_of_last_frame === true)
-                {
-                    self.sprite_end = true;
-                }
-
-            self.frameIndex = 1;
-        }
+    if (self.count < 50){ //может быть косяк в названии с переменной (такая же функция)
+        self.count += 1;
+    }
+    else{
+        self.count = 0;
     }
 };
 
@@ -128,3 +126,20 @@ Sprite.prototype.render = function () {
             self.height
         );
 };
+
+Sprite.prototype.update = function () {
+    var self = this;
+    if (self.count % 4 == 0) { // задается скорость вращения
+        self.frameIndex += 1;
+
+        if (self.frameIndex > self.numberOfFrames - 1) {
+            if (self.is_dying_because_of_last_frame === true)
+                {
+                    self.sprite_end = true;
+                }
+
+            self.frameIndex = 1;
+        }
+    }
+};
+
