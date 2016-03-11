@@ -38,7 +38,8 @@
 
         //-----------------sprites-----------------------
         var sprite_canvas = document.getElementById('spriteCanvas');
-		var url_image_sprites = "sprite_bullet_and_fire.png";
+        var url_image_bullets = "balls.png";
+		var url_image_fire = "sprite_bullet_and_fire.png";
 		var sprites = [];
 
 		//задание времени, через которое будет отображаться в с
@@ -61,9 +62,15 @@
 		}
 
 		function add_sprites() {
-			var sprite = create_fire_and_bullet(url_image_sprites, sprite_canvas);
+			var sprite = create_fire_and_bullet(url_image_fire, url_image_bullets, sprite_canvas);
 			sprites.push(sprite)
 		}
+
+        //function inRad(num) {
+        //    return num * Math.PI / 180;
+        //}
+        //var ctx = sprite_canvas.getContext('2d');
+        //ctx.rotate(inRad(90));
 
 	</script>
 </body>

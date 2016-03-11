@@ -15,6 +15,11 @@ BTN_DIRECTIONS = {
 angular.module('arduinoBattle')
 .controller 'CarCtrl', ($scope, $routeParams, $log, $interval, config, CarResource, swWebSocket) ->
 
+    $scope.availableImages = [
+      src: "http://127.0.0.1:8000/src/app/resources/sprite_data/balls.png",
+      src: "http://127.0.0.1:8000/src/app/resources/sprite_data/sprite_bullet_and_fire.png"
+    ]
+
     $scope.moveStatus = {
         forward: false
         backward: false

@@ -2,29 +2,62 @@
     {{ car.name }}
     <small>{{ car.address }}</small>
 </h1>
+<button onclick="return add_sprites()">Огонь</button>
 
-<style type="text/css">
-    #videoCanvas {
-        width: 640px;
-        height: 480px;
-    }
-</style>
+{#<div style="position: relative;">#}
+    <canvas id="videoCanvas" style=" z-index: 0;" width="640" height="480"> </canvas>
+    <canvas id="spriteCanvas" style="z-index: 1;" width="640" height="480"> </canvas>
+{#</div>#}
 
-<canvas id="videoCanvas" width="640" height="480">
+ //<script type="text/javascript" src="../resources/sprite_data/jsmpg.js"></script>
+//<script type="text/javascript" src="../resources/sprite_data/shot_sprite.js"></script>
+//<script type="text/javascript" src="../resources/sprite_data/sprite2.js"></script>
 
-</canvas>
+<script>
 
-<script type="text/javascript" src="jsmpg.js"></script>
-<script type="text/javascript">
-    // Show loading notice
     var canvas = document.getElementById('videoCanvas');
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = '${COLOR}';
     ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
 
     // Setup the WebSocket connection and start the player
-    var client = new WebSocket('ws://{{ car.address }}:8084/');
+    //var client = new WebSocket('ws://{{ car.address }}:8084/');
+    var client = new WebSocket('ws://10.0.0.16:8084/');
     var player = new jsmpeg(client, {canvas:canvas});
+
+    //-----------------sprites-----------------------
+    var sprite_canvas = document.getElementById('spriteCanvas');
+    console.log(sprite_canvas);
+    sprite_context = sprite_canvas.getContext('2d');
+    console.log(sprite_context);
+    images = {{ availableImages }};
+    var url_image_bullets = images[0];
+    var url_image_fire = images[1];
+    var sprites = [];
+
+    //задание времени, через которое будет отображаться в с
+    function fire() {
+        console.log("GO");
+        setTimeout(function(){
+            //кол-во действий в сек
+            var interval_id = setInterval(play, 1000 / 200);
+        }, 1000);
+    }
+    fire();
+
+    function play() {
+        for (var i=0; i<sprites.length; i++){
+            if (sprites[i].end_this_sprites == true)
+                    sprites.splice(i--, 1); //a = 3 //delete me
+            else
+                sprites[i].play();
+        }
+    }
+
+    function add_sprites() {
+        var sprite = create_fire_and_bullet(url_image_fire, url_image_bullets, sprite_context);
+        sprites.push(sprite)
+    }
 </script>
 
 

@@ -21,33 +21,31 @@ FireAndBuletSprite.prototype.play = function (){
 
 
 // функция создания спрайтов
-var create_fire_and_bullet = function(url_image_fire, url_image_bullets, sprite_canvas) {
+var create_fire_and_bullet = function(url_image, sprite_context) {
 
-    var sprite_context = sprite_canvas.getContext('2d');
-    //"sprite_bullet_and_fire.png";
-    var bulletImage = new Image();
-    bulletImage.src = url_image_bullets; 
+    //var sprite_context = sprite_canvas.getContext('2d');
+    var bulletAndFireImage = new Image();
+    bulletAndFireImage.src = url_image; //"sprite_bullet_and_fire.png";
+
     var sprite_bullet = new Sprite({
         context: sprite_context,
-        width: 544,
+        width: 320,
         height: 35,
-        start_point_height: 256-16,
-        image: bulletImage,
-        numberOfFrames: 34, // число кадров в спрайте (каждый кадр должен быть одинаков по размера dy, dx)
-        path_points: [[580, 480], [320, 240]], //точки перемещения спрайта
+        start_point_height: 78,
+        image: bulletAndFireImage,
+        numberOfFrames: 4, // число кадров в спрайте (каждый кадр должен быть одинаков по размера dy, dx)
+        path_points: [[0, 300], [150, 150]], //точки перемещения спрайта
         is_dying_because_of_the_way: true
     });
 
-    var fireImage = new Image();
-    fireImage.src = url_image_fire; 
     var sprite_fire = new Sprite({
         context: sprite_context,
         width: 506,
         height: 35,
         start_point_height: 120,
-        image: fireImage,
+        image: bulletAndFireImage,
         numberOfFrames: 13, // число кадров в спрайте (каждый кадр должен быть одинаков по размера dy, dx)
-        path_points: [ [320, 240],[320, 240]], //точки перемещения спрайта
+        path_points: [ [155, 150],[155, 150]], //точки перемещения спрайта
         is_dying_because_of_last_frame: true
     });
 
