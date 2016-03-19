@@ -26,9 +26,7 @@ var paths = {
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'bower_components/sw-angular-utils/sw-angular-utils.js',
             'bower_components/sw-angular-websocket/sw-angular-websocket.js',
-            'src/app/resources/sprite_data/jsmpg.js', //TODO убери меня от сюда
-            'src/app/resources/sprite_data/shot_sprite.js',
-            'src/app/resources/sprite_data/sprite2.js'
+            'src/app/resources/ajax_request_without_jquery.js'
         ],
         app: './src/**/*.coffee'
     },
