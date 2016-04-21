@@ -1,5 +1,4 @@
-var get_sprites_and_video = function(data, addr_car) {
-
+var get_sprites_and_video = function(images_src, addr_car) {
     var canvas = document.getElementById('videoCanvas');
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = '#783293';
@@ -7,19 +6,18 @@ var get_sprites_and_video = function(data, addr_car) {
 
     // Setup the WebSocket connection and start the player
     //var client = new WebSocket('ws://{{ car.address }}:8084/');
-    var client = new WebSocket('ws://'+addr_car+'8084'); //('ws://10.0.0.16:8084/');
-    var player = new jsmpeg(client, {canvas:canvas});
+
+    //var client = new WebSocket('ws://'+addr_car+'8084'); //('ws://10.0.0.16:8084/'); TODO
+    //var player = new jsmpeg(client, {canvas:canvas}); TODO
 
     //-----------------sprites-----------------------
     var sprite_canvas = document.getElementById('spriteCanvas');
     console.log(sprite_canvas);
-    sprite_context = sprite_canvas.getContext('2d');
-    console.log(sprite_context);
+    var sprite_context = sprite_canvas.getContext('2d');
 
-    var url_image_bullets = data['images']['balls'];
-    var url_image_fire = data['images']['sprite_bullet_and_fire'];
+
     var sprites = [];
-
+    console.log(sprites);
     //задание времени, через которое будет отображаться в с
     function fire() {
         console.log("GO");
@@ -39,8 +37,10 @@ var get_sprites_and_video = function(data, addr_car) {
         }
     }
 
-    function add_sprites() {
-        var sprite = create_fire_and_bullet(url_image_fire, url_image_bullets, sprite_context);
+    var url_image_bullets = images_src['balls'];
+    var url_image_fire = images_src['sprite_bullet_and_fire'];
+    add_sprites = function () {
+        var sprite = create_fire_and_bullet(url_image_fire, url_image_bullets, sprite_canvas);
         sprites.push(sprite)
     }
 };

@@ -2,89 +2,113 @@
     {{ car.name }}
     <small>{{ car.address }}</small>
 </h1>
-<button onclick="return add_sprites()">Огонь</button>
 
-{#<div style="position: relative;">#}
-    <canvas id="videoCanvas" style=" z-index: 0;" width="640" height="480"> </canvas>
-    <canvas id="spriteCanvas" style="z-index: 1;" width="640" height="480"> </canvas>
-{#</div>#}
-
-<script>
-    var sprites_data = ajax_request('/send_sprite_files_json'); //TODO ADD URL
-
-    addScript(sprites_data['js']['jsmpg']);
-    addScript(sprites_data['js']['sprite2']);
-    addScript(sprites_data['js']['shot_sprite']);
-    addScript(sprites_data['js']['video_and_sprites']);
-    // совершенно очевидно, что в video_and_sprites есть функция
-    // которая принимает словарь с картинками и адрессом машинки
-
-    addr_car = '10.0.0.16';
-    get_sprites_and_video(sprites_data['images'], addr_car);
-    
-    function addScript(src) {
-        var elem = document.createElement("script");
-        elem.src = src;
-        document.head.appendChild(elem);
-    }
-
-</script>
+    <div style="position: fixed; left:30%">
+        <canvas id="videoCanvas" style=" position: absolute; z-index: 0;" width="640" height="480"> </canvas>
+        <canvas id="spriteCanvas" style="position: absolute; z-index: 1;" width="640" height="480"> </canvas>
+    </div>
 
 
-<div ng-keydown="keyDownHandler($event)" ng-keyup="keyUpHandler($event)">
+    <script src="/static/core/sprites/jsmpg.js"></script>
+    <script src="/static/core/sprites/sprite2.js"></script>
+    <script src="/static/core/sprites/shot_sprite.js"></script>
+    <script src="/static/core/sprites/video_and_sprites.js"></script>
 
-    <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-            <button id="forwardBtn" type="button" class="btn btn-lg btn-default btn-block" autofocus
-                    ng-class="{'btn-primary': moveStatus.forward}"
-                    ng-mousedown="move('forward', true)"
-                    ng-mouseup="move('forward', false)"
-                >Forward
-            </button>
+
+    <button class="btn-default btn-lg" id="FireButton" >Огонь</button>
+
+    <script>
+        //var sprites_data = ajax_request('/send_sprite_files_json', 'GET'); //TODO ADD URL
+
+        //addScript(sprites_data['js']['jsmpg']);
+        //addScript(sprites_data['js']['sprite2']);
+        //addScript(sprites_data['js']['shot_sprite']);
+        //addScript(sprites_data['js']['video_and_sprites']);
+        // совершенно очевидно, что в video_and_sprites есть функция
+        // которая принимает словарь с картинками и адрессом машинки
+
+        //get_sprites_and_video(sprites_data['images'], addr_car);
+
+        //function addScript(src) {
+        //    var elem = document.createElement("script");
+        //    elem.src = src;
+        //    document.head.appendChild(elem);
+        //}
+
+        // TODO добавить val на small для получения id car
+        var images_src = {
+            'balls': '/static/core/sprites/balls.png',
+            'sprite_bullet_and_fire': '/static/core/sprites/sprite_bullet_and_fire.png'
+        };
+        addr_car = '10.0.0.16'; //TODO
+        // var addr_car = {{ car.address }}
+
+        get_sprites_and_video(images_src, addr_car);
+
+
+        var fire_button = document.getElementById('FireButton');
+        fire_button.onclick = function(e) {
+            if (e)
+                add_sprites();
+        };
+    </script>
+
+<div style="top:2000px">
+    <div ng-keydown="keyDownHandler($event)" ng-keyup="keyUpHandler($event)">
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button id="forwardBtn" type="button" class="btn btn-lg btn-default btn-block" autofocus
+                        ng-class="{'btn-primary': moveStatus.forward}"
+                        ng-mousedown="move('forward', true)"
+                        ng-mouseup="move('forward', false)"
+                    >Forward
+                </button>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <button id="leftBtn" type="button" class="btn btn-lg btn-default btn-block"
+                        ng-class="{'btn-primary': moveStatus.left}"
+                        ng-mousedown="move('left', true)"
+                        ng-mouseup="move('left', false)"
+                    >Left
+                </button>
+            </div>
+
+            <div class="col-md-offset-4 col-md-4">
+                <button id="rightBtn" type="button" class="btn btn-lg btn-default btn-block"
+                        ng-class="{'btn-primary': moveStatus.right}"
+                        ng-mousedown="move('right', true)"
+                        ng-mouseup="move('right', false)"
+                    >Right
+                </button>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <button id="backwardBtn" type="button" class="btn btn-lg btn-default btn-block"
+                        ng-class="{'btn-primary': moveStatus.backward}"
+                        ng-mousedown="move('backward', true)"
+                        ng-mouseup="move('backward', false)"
+                    >Backward
+                </button>
+            </div>
         </div>
     </div>
 
 
     <br>
-    <div class="row">
-        <div class="col-md-4">
-            <button id="leftBtn" type="button" class="btn btn-lg btn-default btn-block"
-                    ng-class="{'btn-primary': moveStatus.left}"
-                    ng-mousedown="move('left', true)"
-                    ng-mouseup="move('left', false)"
-                >Left
-            </button>
-        </div>
-
-        <div class="col-md-offset-4 col-md-4">
-            <button id="rightBtn" type="button" class="btn btn-lg btn-default btn-block"
-                    ng-class="{'btn-primary': moveStatus.right}"
-                    ng-mousedown="move('right', true)"
-                    ng-mouseup="move('right', false)"
-                >Right
-            </button>
-        </div>
-    </div>
-
-
-    <br>
-    <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-            <button id="backwardBtn" type="button" class="btn btn-lg btn-default btn-block"
-                    ng-class="{'btn-primary': moveStatus.backward}"
-                    ng-mousedown="move('backward', true)"
-                    ng-mouseup="move('backward', false)"
-                >Backward
-            </button>
-        </div>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in commandLog">
+            <span class="badge">{{ item.dt }}</span>
+            {{ item.response }}
+        </li>
+    </ul>
 </div>
-
-
-<br>
-<ul class="list-group">
-    <li class="list-group-item" ng-repeat="item in commandLog">
-        <span class="badge">{{ item.dt }}</span>
-        {{ item.response }}
-    </li>
-</ul>
