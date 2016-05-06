@@ -1,13 +1,19 @@
 from django.http.response import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import rest_framework.viewsets
 
 from core import models
 from core import serializers
+from rest_framework.authtoken.models import Token
 
 
 def index(request):
-    return render(request, 'index.html')
+    if not request.user.is_authenticated():
+        return redirect('login')
+
+    user = request.user
+    token = Token.objects.create(user=user)
+    return render(request, 'index.html', {'token': token})
 
 
 class CarViewSet(rest_framework.viewsets.ReadOnlyModelViewSet):
@@ -16,9 +22,7 @@ class CarViewSet(rest_framework.viewsets.ReadOnlyModelViewSet):
 
 
 def send_sprite_files_json(request):
-    print('HELLO')
-    print(request)
-    # if request.GET:
+
     dir_name = '/static/core/sprites/'
     static_files = {
         'images': {

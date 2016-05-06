@@ -1,4 +1,10 @@
-django==1.9.2
-pyzmq==15.2.0
 aiohttp==0.21.0
+chardet==2.3.0
+Django==1.9.2
+django-cors-headers==1.1.0
 djangorestframework==3.3.2
+ioloop==0.1a0
+pyzmq==15.2.0
+zmq==0.0.0
+
+pyserial==3.0.1

@@ -10,7 +10,7 @@ router.register('car', views.CarViewSet)
 
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index, name='index'),
     url(r'^send_sprite_files_json$', views.send_sprite_files_json),
 
 ]
