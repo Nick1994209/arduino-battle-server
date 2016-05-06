@@ -1,5 +1,7 @@
+{% load field_filters %}
+
 {% if form.non_field_errors %}
-<div align="center" class="alert alert-success">
+<div align="center" class="alert alert-danger">
     <strong>
         {{ form.non_field_errors }}
     </strong>
@@ -8,15 +10,15 @@
 
 {% for field in form %}
     <div class="form-group row">
-        <label for="{{ field.id_for_label }}" class="col-sm-4 form-control-label align-right">{{ field.label }}</label>
-        <div class="col-sm-8 {% if field.errors %} field_error {% endif %}">
-            {{ field }}
+        <label for="{{ field.id_for_label }}" class="col-sm-3 form-control-label align-right">{{ field.label }}</label>
+        <div class="col-sm-9 {% if field.errors %} field_error {% endif %}">
+            <input class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" type="{{ field|fieldtype }}"/>
         </div>
     </div>
 
     {% if field.errors %}
         <div class="row">
-            <div class="col-sm-offset-4 col-sm-8">
+            <div class="col-sm-offset-4 col-sm-8 text-danger text-center">
                 {{ field.errors }}
             </div>
         </div>

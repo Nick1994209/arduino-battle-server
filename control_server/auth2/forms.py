@@ -8,6 +8,11 @@ from django.contrib.auth.models import User
 class LoginForm(AuthenticationForm):
     username = forms.CharField(label="Логин")
 
+    error_messages = {
+        'invalid_login': "Пожалуйста введите корректный логин или пароль",
+        'inactive': "Аккаунт не активен",
+    }
+
     def clean(self):
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')
@@ -32,6 +37,11 @@ class RegisterForm(forms.ModelForm):
                                 widget=forms.PasswordInput,
                                 strip=False,
                                 help_text=("Пароли должны совподать"))
+
+    def __init__(self, **qwargs):
+        super(RegisterForm, self).__init__(**qwargs)
+        self.fields['username'].label = "Имя пользователя"
+        self.fields['username'].error_messages['required'] = 'Требуется имя пользователя'
 
     class Meta:
         model = User

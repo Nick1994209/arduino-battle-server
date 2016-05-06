@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e13fe0-6bf2-452d-a7fe-d09ff600478e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/css/base.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/core/static/core/js/jquery-2.2.1.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/control_server/auth2/readme.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/auth2/templatetags/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/control_server/auth2/templatetags/field_filters.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/auth2/templates/auth2/base.html" afterPath="$PROJECT_DIR$/control_server/auth2/templates/auth2/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/auth2/forms.py" afterPath="$PROJECT_DIR$/control_server/auth2/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html" afterPath="$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html" afterPath="$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html" afterPath="$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html" />
     </list>
     <ignored path="my_arduino_batle_serv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,41 +39,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fields_form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html">
+      <file leaf-file-name="field_filters.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control_server/auth2/templatetags/field_filters.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <caret line="6" column="38" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -102,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -146,13 +109,17 @@
         <option value="$PROJECT_DIR$/control_server/auth2/templates/base.html" />
         <option value="$PROJECT_DIR$/control_server/auth2/templates/login.html" />
         <option value="$PROJECT_DIR$/control_server/auth2/urls.py" />
-        <option value="$PROJECT_DIR$/control_server/auth2/forms.py" />
-        <option value="$PROJECT_DIR$/control_server/auth2/views.py" />
         <option value="$PROJECT_DIR$/control_server/core/static/core/css/base.css" />
         <option value="$PROJECT_DIR$/control_server/auth2/templates/auth2/base.html" />
-        <option value="$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html" />
         <option value="$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html" />
+        <option value="$PROJECT_DIR$/control_server/auth2/templated_tags.py" />
+        <option value="$PROJECT_DIR$/control_server/auth2/template_tags.py" />
+        <option value="$PROJECT_DIR$/control_server/auth2/templatetags/template_tags.py" />
+        <option value="$PROJECT_DIR$/control_server/auth2/templatetags/field_filters.py" />
+        <option value="$PROJECT_DIR$/control_server/auth2/views.py" />
+        <option value="$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html" />
         <option value="$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html" />
+        <option value="$PROJECT_DIR$/control_server/auth2/forms.py" />
       </list>
     </option>
   </component>
@@ -243,6 +210,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_arduino_batle_serv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arduino-battle-server_my_fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_arduino_batle_serv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arduino-battle-server_my_fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -267,6 +278,7 @@
       <recent name="$PROJECT_DIR$/control_server/core/static/sprites" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/control_server/auth2/templatetags" />
       <recent name="$PROJECT_DIR$/control_server/auth2/templates/auth2" />
       <recent name="$PROJECT_DIR$/control_server/core/static/core" />
       <recent name="$PROJECT_DIR$/control_server/frontend/src/app/resources/sprite_data" />
@@ -670,13 +682,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/control_server/auth2/views.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager>
@@ -686,20 +691,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/car.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/car.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -925,6 +916,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="536" column="4" selection-start-line="536" selection-start-column="4" selection-end-line="536" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -940,30 +932,6 @@
         <state relative-caret-position="211">
           <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/arduino_batle_serv/local/lib/python3.5/site-packages/django/contrib/auth/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/auth2/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/auth2/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="e#16#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,34 +990,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html">
+    <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html">
+    <entry file="file://$USER_HOME$/python/3.5.1/lib/python3.5/unittest/mock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="121">
+          <caret line="1265" column="38" selection-start-line="1265" selection-start-column="34" selection-end-line="1265" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/fields_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="240">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
+    <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="90">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/auth2/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/auth2/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/arduino_batle_serv/local/lib/python3.5/site-packages/django/contrib/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/auth2/templatetags/field_filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/auth2/templates/auth2/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
       </provider>
