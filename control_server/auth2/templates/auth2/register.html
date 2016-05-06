@@ -3,7 +3,7 @@
 {% block content %}
     <form action="{{ request.path }}" method="post">
         {% csrf_token %}
-        {{ form.as_p  }}
-        <button  type="submit"> Зарегестрироваться </button>
+        {% include 'auth2/fields_form.html' %}
+        <button class="btn btn-default" type="submit"> Зарегестрироваться </button>
     </form>
 {% endblock %}

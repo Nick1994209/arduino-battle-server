@@ -1,0 +1,24 @@
+{% if form.non_field_errors %}
+<div align="center" class="alert alert-success">
+    <strong>
+        {{ form.non_field_errors }}
+    </strong>
+</div>
+{% endif %}
+
+{% for field in form %}
+    <div class="form-group row">
+        <label for="{{ field.id_for_label }}" class="col-sm-4 form-control-label align-right">{{ field.label }}</label>
+        <div class="col-sm-8 {% if field.errors %} field_error {% endif %}">
+            {{ field }}
+        </div>
+    </div>
+
+    {% if field.errors %}
+        <div class="row">
+            <div class="col-sm-offset-4 col-sm-8">
+                {{ field.errors }}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
