@@ -35,7 +35,7 @@ class CarViewSet(rest_framework.viewsets.ReadOnlyModelViewSet):
 
 
 def get_user(request):
-    return JsonResponse(request.user.username)
+    return JsonResponse({'username': request.user.username})
 
 
 def send_sprite_files_json(request):

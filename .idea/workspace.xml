@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e13fe0-6bf2-452d-a7fe-d09ff600478e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/core/urls.py" afterPath="$PROJECT_DIR$/control_server/core/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/core/views.py" afterPath="$PROJECT_DIR$/control_server/core/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee" afterPath="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html" afterPath="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee" afterPath="$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee" afterPath="$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee" />
     </list>
     <ignored path="my_arduino_batle_serv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +42,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="114">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,28 +52,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_server/core/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_car.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/create_car.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -76,8 +62,18 @@
       <file leaf-file-name="services.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="21" />
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -86,28 +82,18 @@
       <file leaf-file-name="app.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/app.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="-26">
               <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factory.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+            <state relative-caret-position="150">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -131,7 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/prototyping/raspberry_pi/camera/server/sprite2.js" />
         <option value="$PROJECT_DIR$/prototyping/raspberry_pi/camera/server/index.html" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/controllers/car.coffee" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/resources/sprite_data/shot_sprite.js" />
@@ -176,12 +161,13 @@
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/controllers/create_car.html" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/services.coffee" />
         <option value="$PROJECT_DIR$/control_server/frontend/dist/app.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/control_server/core/urls.py" />
+        <option value="$PROJECT_DIR$/control_server/core/views.py" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee" />
+        <option value="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html" />
         <option value="$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee" />
-        <option value="$PROJECT_DIR$/control_server/core/views.py" />
-        <option value="$PROJECT_DIR$/control_server/core/urls.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -267,7 +253,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_arduino_batle_serv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arduino-battle-server_my_fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_arduino_batle_serv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arduino-battle-server_my_fork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -709,7 +751,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/123.py" />
     <entry file="file://$PROJECT_DIR$/car_server/command_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -965,22 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/create_car.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/create_car.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1029,66 +1054,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/dist/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="181" column="13" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/app.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee">
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/dist/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        <state relative-caret-position="172">
+          <caret line="198" column="39" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
+          <folding>
+            <marker date="1462619614154" expanded="true" signature="5257:5404" placeholder="{...}" />
+            <marker date="1462619614154" expanded="true" signature="5316:5404" placeholder="[...]" />
+            <marker date="1462619614154" expanded="true" signature="5361:5404" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/arduino_batle_serv/local/lib/python3.5/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="496" column="27" selection-start-line="496" selection-start-column="23" selection-end-line="496" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/create_car.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="15">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control_server/core/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state relative-caret-position="135">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/services.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/resources/factory.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/app.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_server/frontend/src/app/controllers/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -6,5 +6,6 @@ angular.module('arduinoBattle')
         for car in cars
             $scope.cars.push(car)
             
-    userService.getUser()
-    $scope.user = userService.username
+    userService.getUsername()
+    $scope.username = userService.username
+    console.log $scope

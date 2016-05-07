@@ -4,7 +4,7 @@ angular.module('arduinoBattle')
     url = "#{ config.serverAddress }/car/:id/"
     return $resource(url)
 
-.factory('UserResource', ['$resource', ($resource, config) ->
+.factory('UserResource', ['$resource', 'config', ($resource, config) ->
     url = "#{ config.serverAddress }/get_user/"
-    return $resource(url)
+    return $resource(url, {}, {query: {method: 'get', isArray: false}})
 ])

@@ -11,9 +11,8 @@ router.register('car', views.CarViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^get_user/$', views.get_user),
+    url(r'^get_user$', views.get_user),
     url(r'^send_sprite_files_json/$', views.send_sprite_files_json),
-
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
