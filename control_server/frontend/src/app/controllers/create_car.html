@@ -1,3 +1,26 @@
-<div>
-    <h1>  </h1>
-</div>
+<h1> {{ userService.username }} </h1>
+
+<div class="text-danger text-center">{{ errors }}</div>
+
+<form>
+    <div class="form-group row">
+        <label for="name_id" class="col-sm-3 form-control-label">Название машинки</label>
+        <div class="col-sm-9">
+            <input ng-model="name" class="form-control" id="name_id" name="name" type="text"/>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="id_address" class="col-sm-3 form-control-label">Адресс</label>
+        <div class="col-sm-9 {% if field.errors %} field_error {% endif %}">
+            <input ng-model="address" class="form-control" id="id_address" name="address" type="text"/>
+        </div>
+    </div>
+    <div class="col-sm-offset-3 col-sm-9" ng-click="addCar()">
+        <button>Добавить машинку</button>
+    </div>
+</form>
+
+{{ name }}
+
+{{ address }}

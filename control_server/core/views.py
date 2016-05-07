@@ -23,18 +23,20 @@ def index(request):
     return render(request, 'index.html',) #{'token'=token}
 
 
-class CarViewSet(rest_framework.viewsets.ReadOnlyModelViewSet):
+class CarViewSet(rest_framework.viewsets.ModelViewSet):
     authentication_classes = (SessionAuthentication, BasicAuthentication)
     permission_classes = (IsAuthenticated,)
 
     queryset = models.Car.objects.all()
     serializer_class = serializers.Car
 
+    
+
     def get_queryset(self):
         return models.Car.objects.filter(user=self.request.user)
 
 
-def get_user(request):
+def get_user_data(request):
     return JsonResponse({'username': request.user.username})
 
 

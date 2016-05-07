@@ -3,8 +3,7 @@ angular.module('arduinoBattle')
 .service('userService', ['UserResource', (UserResource) -> 
     self = this
     self.username = undefined 
-    this.getUsername = () ->
-        console.log(1232132132133123123)
+    self.getUserData = () ->
         UserResource.query(
           ((data) ->
               self.username = data['username']
@@ -15,3 +14,9 @@ angular.module('arduinoBattle')
         )
     return undefined 
 ])
+
+.service('carCreateService', ()->
+#    this.createCar = (carData) ->
+#        CarCreateService.post()
+    a = 32
+)

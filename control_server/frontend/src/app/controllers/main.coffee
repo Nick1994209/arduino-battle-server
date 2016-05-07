@@ -1,11 +1,12 @@
 angular.module('arduinoBattle')
 .controller 'MainCtrl', ($scope, $log, CarResource, userService) ->
-    $scope.cars = []
+    $scope.cars = CarResource.query()
+    
+#    $scope.cars_p = CarResource.query (cars_data)->
+#        for car in cars_data
+#            $scope.cars.push(car)
 
-    cars = CarResource.query ->
-        for car in cars
-            $scope.cars.push(car)
-            
-    userService.getUsername()
-    $scope.username = userService.username
-    console.log $scope
+    $scope.userData = userService.getUserData()
+
+#    userService.getUsername()
+#    $scope.service = userService

@@ -1,5 +1,3 @@
-{% load field_filters %}
-
 {% if form.non_field_errors %}
 <div align="center" class="alert alert-danger">
     <strong>
@@ -12,7 +10,7 @@
     <div class="form-group row">
         <label for="{{ field.id_for_label }}" class="col-sm-3 form-control-label align-right">{{ field.label }}</label>
         <div class="col-sm-9 {% if field.errors %} field_error {% endif %}">
-            <input class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" type="{{ field|fieldtype }}"/>
+            <input class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" type="{{ field.field.widget.input_type }}"/>
         </div>
     </div>
 

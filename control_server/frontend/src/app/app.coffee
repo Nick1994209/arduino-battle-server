@@ -23,6 +23,12 @@ angular.module('arduinoBattle', [
           controller: 'CarCtrl'
           label: 'Car'
         )
+        .when('/create_car/',
+          templateUrl: 'controllers/create_car.html'
+          controller: 'CreateCarCtrl'
+          label: ''
+        )
+        .otherwise('/')
 
 
 .run ($location, $rootScope, swTitle) ->

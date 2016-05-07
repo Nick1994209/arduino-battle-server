@@ -1,10 +1,14 @@
-<h1>Cars</h1>
+<h1 class="center"> {{ userData.username }}</h1>
 
-    <h1> {{ username }}</h1>
-123
+<h2>Машинки пользователя</h2>
+
 
 <div class="list-group">
     <a href="#/car/{{ car.id }}" class="list-group-item" ng-repeat="car in cars">
         {{ car.name }}
     </a>
+</div>
+
+<div>
+    <a href="#/create_car/">Добавить машинку</a>
 </div>
