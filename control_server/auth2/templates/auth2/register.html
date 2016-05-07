@@ -5,5 +5,6 @@
         {% csrf_token %}
         {% include 'auth2/fields_form.html' %}
         <button class="btn btn-default" type="submit"> Зарегестрироваться </button>
+        <a href="{% url 'login' %}"> Войти </a>
     </form>
 {% endblock %}

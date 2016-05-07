@@ -10,17 +10,27 @@
         <link href="bower_components/sw-angular-utils/styles/utils.css" rel="stylesheet">
         <link href="styles/main.css" rel="stylesheet">
 
+        <link href="{{ STATIC_URL }}core/css/base.css" rel="stylesheet"/>
+
+        <link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
         <div class="container">
-            <div ng-view></div>
-        </div>
+            <div class="row">
+            <div class="col-sm-12 content" style="margin-top: 4vh">
+                {% block content %}
+                {% endblock %}
 
+                <div ng-view></div>
+            </div>
 
         <script src="dist/lib.js"></script>
         <script src="dist/app.js"></script>
         <script src="dist/templates.js"></script>
 
+        <script src="{{ STATIC_URL }}core/js/jquery-2.2.1.min.js"></script>
+        <script src="{{ STATIC_URL }}core/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
