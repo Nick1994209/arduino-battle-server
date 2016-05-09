@@ -14,7 +14,6 @@ BTN_DIRECTIONS = {
 
 angular.module('arduinoBattle')
 .controller 'CarCtrl', ($scope, $routeParams, $log, $interval, config, CarResource, swWebSocket) ->
-
     $scope.availableImages = [
       src: "http://127.0.0.1:8000/src/app/resources/sprite_data/balls.png",
       src: "http://127.0.0.1:8000/src/app/resources/sprite_data/sprite_bullet_and_fire.png"
@@ -30,7 +29,15 @@ angular.module('arduinoBattle')
     carId = $routeParams.id
     CarResource.get {'id': carId}, (car) ->
         $scope.car = car
+        console.log $scope.car.address
+        game_begin($scope.car.address)
 
+
+    console.log 123
+    if $scope.car and flag==0
+        flag = 1
+        console.log 12312
+        game_begin(car.address)
 
     $scope.commandLog = []
     $scope.carCommandHandler = (commandResponse) ->
@@ -103,3 +110,15 @@ _createWs = ($scope, swWebSocket, config, carId) ->
 sendMoveStatus = (ws, moveStatus) ->
     data = JSON.stringify(moveStatus)
     ws.send(data)
+
+game_begin = (car_addr) ->
+    console.log(car_addr)
+    images_src = {
+        'balls': '/static/core/sprites/balls.png',
+        'sprite_bullet_and_fire': '/static/core/sprites/sprite_bullet_and_fire.png'
+    }
+    get_sprites_and_video(images_src, car_addr)
+    fire_button = document.getElementById('FireButton')
+    fire_button.onclick = (event) ->
+        if (event)
+            add_sprites()

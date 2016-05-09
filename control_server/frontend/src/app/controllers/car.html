@@ -1,6 +1,7 @@
+<div ng-controller="CarCtrl">
 <h1>
     {{ car.name }}
-    <small>{{ car.address }}</small>
+    <small id="address_car" address="{{ car.address }}">{{ car.address }}</small>
 </h1>
 
     <div style="position: fixed; left:30%">
@@ -14,43 +15,64 @@
     <script src="/static/core/sprites/shot_sprite.js"></script>
     <script src="/static/core/sprites/video_and_sprites.js"></script>
 
-
     <button class="btn-default btn-lg" id="FireButton" >Огонь</button>
 
     <script>
-        //var sprites_data = ajax_request('/send_sprite_files_json', 'GET'); //TODO ADD URL
-
-        //addScript(sprites_data['js']['jsmpg']);
-        //addScript(sprites_data['js']['sprite2']);
-        //addScript(sprites_data['js']['shot_sprite']);
-        //addScript(sprites_data['js']['video_and_sprites']);
-        // совершенно очевидно, что в video_and_sprites есть функция
-        // которая принимает словарь с картинками и адрессом машинки
-
-        //get_sprites_and_video(sprites_data['images'], addr_car);
-
-        //function addScript(src) {
-        //    var elem = document.createElement("script");
-        //    elem.src = src;
-        //    document.head.appendChild(elem);
-        //}
 
         // TODO добавить val на small для получения id car
         var images_src = {
             'balls': '/static/core/sprites/balls.png',
             'sprite_bullet_and_fire': '/static/core/sprites/sprite_bullet_and_fire.png'
         };
-        addr_car = '10.0.0.16'; //TODO
-        // var addr_car = {{ car.address }}
 
-        get_sprites_and_video(images_src, addr_car);
+//       var dom_el = document.querySelector('[ng-controller="CarCtrl"]');
+//        var ng_el = angular.element(dom_el);
+//        var ng_el_scope = ng_el.scope();
+//        (ng_el_scope.car);
 
+        //var promise = new Promise(function(resolve, reject) {
+        //    var addr_car = undefined;
+         //   setTimeout(
+          //      function () {
+           //         for (var i=0; i<=10; i++)
+            //        {
+              //          console.log(123)
+               //     }
+                //}, 1
+            //);
+        //});
+        v = function () {
+            var addr_car = document.getElementById('address_car').getAttribute('address');
+            console.log(addr_car);
+            get_sprites_and_video(images_src, addr_car);
+            console.log(addr_car);
+            var fire_button = document.getElementById('FireButton');
+            fire_button.onclick = function(event) {
+                if (event)
+                    add_sprites();
+            };
 
-        var fire_button = document.getElementById('FireButton');
-        fire_button.onclick = function(e) {
-            if (e)
-                add_sprites();
         };
+
+
+        document.getElementById('address_car').getAttribute('address');
+
+        //while (!addr_car) {
+        //    if (document.getElementById('address_car').getAttribute('address').indexOf('car')==-1){
+        //        addr_car = document.getElementById('address_car').getAttribute('address');
+         //   }
+        //}
+        //if (addr_car) {
+        //    get_sprites_and_video(images_src, addr_car);
+        //    console.log(addr_car);
+
+         //   var fire_button = document.getElementById('FireButton');
+         //   fire_button.onclick = function(e) {
+         //       if (e)
+         //           add_sprites();
+         //   };
+        //}
+
     </script>
 
 <div style="top:2000px">
@@ -111,4 +133,5 @@
             {{ item.response }}
         </li>
     </ul>
+</div>
 </div>
