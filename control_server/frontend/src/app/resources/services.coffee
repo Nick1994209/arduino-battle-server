@@ -14,9 +14,3 @@ angular.module('arduinoBattle')
         )
     return undefined 
 ])
-
-.service('carCreateService', ()->
-#    this.createCar = (carData) ->
-#        CarCreateService.post()
-    a = 32
-)

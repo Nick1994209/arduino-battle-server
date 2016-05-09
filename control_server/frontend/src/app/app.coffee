@@ -30,7 +30,6 @@ angular.module('arduinoBattle', [
         )
         .otherwise('/')
 
-
 .run ($location, $rootScope, swTitle) ->
     $rootScope.swTitle = swTitle
     $rootScope.$on '$routeChangeSuccess', (event, current, previous) ->
@@ -41,4 +40,11 @@ angular.module('arduinoBattle', [
 
 
 .config ($httpProvider) ->
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+#    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken'
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+.config ($resourceProvider) ->
+    $resourceProvider.defaults.stripTrailingSlashes = false;
+

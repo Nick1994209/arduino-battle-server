@@ -11,7 +11,10 @@ router.register('car', views.CarViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^get_user_data', views.get_user_data),
+    url(r'^get_user_data/$', views.get_user_data),
+
+    # url(r'^print_car/$', views.print_car),
+
     url(r'^send_sprite_files_json/$', views.send_sprite_files_json),
 ]
 

@@ -1,4 +1,4 @@
-from django.http.response import JsonResponse
+from django.http.response import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 import rest_framework.viewsets
 
@@ -7,7 +7,7 @@ from core import serializers
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
+
 
 
 def index(request):
@@ -26,11 +26,12 @@ def index(request):
 class CarViewSet(rest_framework.viewsets.ModelViewSet):
     authentication_classes = (SessionAuthentication, BasicAuthentication)
     permission_classes = (IsAuthenticated,)
-
     queryset = models.Car.objects.all()
-    serializer_class = serializers.Car
+    serializer_class = serializers.CarSerializer
 
-    
+    def create(self, request, *args, **kwargs):
+        request.user.cars.create(**request.data)
+        return HttpResponse('created')
 
     def get_queryset(self):
         return models.Car.objects.filter(user=self.request.user)

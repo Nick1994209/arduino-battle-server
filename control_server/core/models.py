@@ -4,7 +4,7 @@ from django.db import models
 
 class Car(models.Model):
     name = models.CharField(max_length=50)
-    address = models.GenericIPAddressField()
+    address = models.GenericIPAddressField(unique=True)
     user = models.ForeignKey(User, related_name='cars')
 
     def __str__(self):

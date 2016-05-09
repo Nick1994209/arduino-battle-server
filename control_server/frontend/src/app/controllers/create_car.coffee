@@ -6,10 +6,16 @@ angular.module('arduinoBattle')
 
     $scope.addCar = ()->
         console.log $scope.address, $scope.name
+
         if $scope.address and $scope.name and $scope.userService.username
-            carData = {addres: $scope.address, name:$scope.name, username: $scope.userService.username}
-            $scope.errors = undefined 
-            CarResource.create(carData)
+            carData = {address: $scope.address, name:$scope.name, } #user: $scope.userService.username
+            $scope.errors = undefined
+            CarResource.save(carData, ()->
+                $scope.created = "Машинка #{ $scope.name } была добавлена пользователю"
+            ,()->
+                $scope.created = undefined 
+                $scope.errors = "Машинка #{ $scope.address } или #{ $scope.name } уже существует"
+            )
         else
             $scope.errors = 'Что то не так'
 
