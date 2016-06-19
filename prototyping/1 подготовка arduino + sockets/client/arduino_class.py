@@ -14,7 +14,6 @@ class Arduino():
         self.ser.write(data)
 
     def get(self):
-        print self.ser.readline()
         return self.ser.readline()
 
     def close_connect(self):

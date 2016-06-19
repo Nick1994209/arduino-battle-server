@@ -1,8 +1,9 @@
+int EN1 = 3;
 int IN1 = 2; // Input1 подключен к выводу 5 
 int IN2 = 5;
+
 int IN3 = 7;
 int IN4 = 8;
-int EN1 = 3;
 int EN2 = 6;
 int i;
 void setup()
@@ -22,9 +23,11 @@ void loop()
   digitalWrite (IN3, LOW); 
   for (i = 50; i <= 180; ++i)
   {
-      analogWrite(EN1, i);
-      analogWrite(EN2, i);
-      delay(30);
+//      analogWrite(EN1, i);
+//      analogWrite(EN2, i);
+//      delay(30);
+    digitalWrite(EN1, 1);
+    digitalWrite(EN2, 1);
   }
   analogWrite (EN1, 0);
   analogWrite (EN2, 0);

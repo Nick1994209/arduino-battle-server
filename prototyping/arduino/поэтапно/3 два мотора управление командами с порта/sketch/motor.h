@@ -1,32 +1,56 @@
-#include "motor.h"
+#include "Arduino.h"
 
-// мотор
-const int EN1 = 3; // упр 1-ым enA правое
-const int IN1 = 2; // контролер 1 для левого мотора - (певый)
-const int IN2 = 5; // контролер 2 для левого мотора
+// зарезервированы буквы: w, s, a, d, b
+class Motor
+{
+  public:
+    Motor(int _EN1, int _IN1, int _IN2, int _EN2, int _IN3, int _IN4); 
+    ~Motor();  
+    
+    int EN1, IN1, IN2, EN2, IN3, IN4;
+    char cur_data_port;
+    char last_data_port = 'govno';
+    int i;
 
-const int EN2 = 6; // упр 1-ым мотором  enB левое
-const int IN3 = 7; // управление вторым мотором
-const int IN4 = 8;
+    void MotorBrake();
+    void MotorGo();
+    void MotorGoesBack();
+    void MotorGoesRight();
+    void MotorGoesLeft();
+    
+    void SwitchMove(char usb_port_data);
+};
 
-int i;
-char cur_data_port = 'z'; //данные с usb порта
-char last_data_port = 'z';
+Motor::Motor(int _EN1, int _IN1, int _IN2, int _EN2, int _IN3, int _IN4)
+{
+  EN1 = _EN1; // EN1 - напряжение для первого мотора (ENA)
+  IN1 = _IN1; // первый мотор
+  IN2 = _IN2; // первый мотор
+  EN2 = _EN2; // ENB
+  IN3 = _IN3;
+  IN4 = _IN4;
+  
+  pinMode(EN1, OUTPUT);
+  pinMode(EN2, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+Motor::~Motor(){}
 
-//функции управления мотором
-
-void MotorBrake ()
+void Motor::MotorBrake ()
 {
   analogWrite(EN1, 0);
   analogWrite(EN2, 0);
   digitalWrite (IN2, LOW);
   digitalWrite (IN1, LOW); 
   digitalWrite (IN4, LOW);
-  digitalWrite (IN3, LOW);
+  digitalWrite (IN3, LOW); 
   delay(500);
 }
 
-void MotorGo ()
+void Motor::MotorGo ()
 { 
   MotorBrake(); //пока так
   
@@ -42,7 +66,7 @@ void MotorGo ()
   }
 }
 
-void MotorGoesBack ()
+void Motor::MotorGoesBack ()
 { 
   MotorBrake();
   
@@ -58,26 +82,7 @@ void MotorGoesBack ()
   }
 }
 
-void MotorGoesRight()
-{
-  MotorBrake();
-
-  // проверить! 
-  //крутит левое вперед, правое - назад
-  digitalWrite (IN2, LOW);
-  digitalWrite (IN1, HIGH); 
-  
-  digitalWrite (IN4, HIGH);
-  digitalWrite (IN3, LOW); 
-  for (i = 0; i <= 180; i++)
-  {
-    analogWrite(EN1, i);
-    analogWrite(EN2, i);
-    delay(10);
-  }
-}
-
-void MotorGoesLeft()
+void Motor::MotorGoesRight()
 {
   MotorBrake();
 
@@ -87,7 +92,27 @@ void MotorGoesLeft()
   digitalWrite (IN1, LOW); 
   
   digitalWrite (IN4, LOW);
-  digitalWrite (IN3, HIGH); 
+  digitalWrite (IN3, HIGH);
+  for (i = 0; i <= 180; i++)
+  {
+    analogWrite(EN1, i);
+    analogWrite(EN2, i);
+    delay(10);
+  }
+}
+
+void Motor::MotorGoesLeft()
+{
+  MotorBrake();
+
+  // проверить! 
+  //крутит левое вперед, правое - назад
+ 
+  digitalWrite (IN2, LOW);
+  digitalWrite (IN1, HIGH); 
+  
+  digitalWrite (IN4, HIGH);
+  digitalWrite (IN3, LOW);  
   for (i = 0; i <= 180; i++)
   {
       analogWrite(EN1, i);
@@ -96,41 +121,11 @@ void MotorGoesLeft()
   }
 }
 
-//------------------------------------------------------------------//
-void setup()
-{ 
-  //выхода для мотора
-//  for (int i=2; i<=8; i++)
-//  {
-//    pinMode (i, OUTPUT);
-//  }
-  pinMode (IN4, OUTPUT);
-  pinMode (IN3, OUTPUT);
-  pinMode (IN2, OUTPUT);
-  pinMode (IN1, OUTPUT);
-  pinMode (EN2, OUTPUT);
-  pinMode (EN1, OUTPUT);
-
-  //usb порт
-  Serial.begin(9600); //скорость соединения с com портом
-}
-
-// void MotorGo();
-// void MotorGoesBack();
-// void MotorBrake();
-// void MotorGoesRight();
-// void MotorGoesLeft();
-
-//---------------------------------------------//
-void loop()
-{  
- if (Serial.available() > 0) // если что-то пришло с com порта
- {    
-    char cur_data_port = Serial.read();
-    Serial.print(last_data_port);
-    Serial.print(cur_data_port);
-    Serial.println('w');
-    if (last_data_port != cur_data_port ) 
+void Motor::SwitchMove(char usb_port_data)
+{
+  cur_data_port = usb_port_data;
+  
+  if (last_data_port != cur_data_port ) 
     { 
       char last_data_port = cur_data_port;
       switch (cur_data_port) //читаем переменную (по 1 символу) с порта
@@ -170,6 +165,4 @@ void loop()
         }
       } 
     }
-  }
 }
-

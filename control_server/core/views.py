@@ -8,6 +8,7 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 
+from control_server.core.serializers import UserSerializer
 
 
 def index(request):
@@ -31,6 +32,19 @@ class CarViewSet(rest_framework.viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         request.user.cars.create(**request.data)
+
+        # request.data['user_id'] = request.user.id#UserSerializer(request.user).data
+        # print(request.data)
+        # request.data['user'] = UserSerializer(request.user).data
+        # print(UserSerializer(request.user).data)
+        # print(request.data)
+        #
+        # serializers.CarSerializer().create(request.data)
+        # print(123)
+        # self.get_serializer(data=request.data)
+        # print(12332)
+
+        # super(CarViewSet, self).create(request, *args, **kwargs)
         return HttpResponse('created')
 
     def get_queryset(self):
@@ -38,7 +52,14 @@ class CarViewSet(rest_framework.viewsets.ModelViewSet):
 
 
 def get_user_data(request):
-    return JsonResponse({'username': request.user.username})
+    return JsonResponse({'username': request.user.username, 'id': request.user.id})
+
+
+# class UseRead(rest_framework.viewsets.ReadOnlyModelViewSet):
+#     user = 123
+#
+# get_user_data = UseRead.as_view({'retrieve': 'retrieve'})
+# get_user_list = UseRead.as_view({'retrieve': 'retrieve'})
 
 
 def send_sprite_files_json(request):

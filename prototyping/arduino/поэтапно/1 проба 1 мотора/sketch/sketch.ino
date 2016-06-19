@@ -3,7 +3,7 @@ const int EN1 = 3; // упр 1-ым enA
 const int IN1 = 2; // контролер 1 для левого мотора - (певый)
 const int IN2 = 5; // контролер 2 для левого мотора
 
-const int EN2 = 6; // упр 1-ым мотором  enB
+const int EN2 = 3; // упр 1-ым мотором  enB
 const int IN3 = 2; // управление вторым мотором
 const int IN4 = 5;
 
