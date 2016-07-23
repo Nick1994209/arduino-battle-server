@@ -2,13 +2,32 @@
 
 <h2>Машинки пользователя</h2>
 
+<style>
+    a div.car_name {
+        display: inline-block; text-shadow: 0 0 5px #62026e; text-decoration: none;color: #9315d3; width: 15%; text-align: center;
+        font-size: 120%;
+    }
+    a.car_item:hover .car_name{text-decoration: underline;}
 
+</style>
 <div class="list-group">
-    <a href="#/car/{{ car.id }}" class="list-group-item" ng-repeat="car in cars">
-        {{ car.name }}
+    <a href="#/car/{{ car.id }}" class="list-group-item car_item" ng-repeat="car in cars">
+        <div class="car_name">
+            {{ car.name }}
+        </div>
+        <div style="display: inline-block; text-align: center; width: 15%">{{ car.address }}</div>
+        <div style="display: inline-block; text-align: center; width: 5%">{{ car.id }}</div>
     </a>
 </div>
 
 <div>
-    <a href="#/create_car/">Добавить машинку</a>
+    <a class=" btn btn-success" style="margin-bottom: 3%" href="#/create_car/">Добавить машинку</a>
 </div>
+
+
+
+ a .car_item:hover~.car_name{
+        display: none;
+             text-decoration: underline;
+    }
+<!--        <div style="display: inline-block; text-shadow:  0 0 2px black, 0 0 5px purple;"> --!>

@@ -30,8 +30,8 @@ class CarViewSet(rest_framework.viewsets.ModelViewSet):
     queryset = models.Car.objects.all()
     serializer_class = serializers.CarSerializer
 
-    def create(self, request, *args, **kwargs):
-        request.user.cars.create(**request.data)
+    # def create(self, request, *args, **kwargs):
+    #     request.user.cars.create(**request.data)
 
         # request.data['user_id'] = request.user.id#UserSerializer(request.user).data
         # print(request.data)
@@ -45,7 +45,14 @@ class CarViewSet(rest_framework.viewsets.ModelViewSet):
         # print(12332)
 
         # super(CarViewSet, self).create(request, *args, **kwargs)
-        return HttpResponse('created')
+        # return HttpResponse('created')
+    # def create(self, request, *args, **kwargs):
+    #     print(100500)
+    #     # super()
+    #     return HttpResponse('created')
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
     def get_queryset(self):
         return models.Car.objects.filter(user=self.request.user)

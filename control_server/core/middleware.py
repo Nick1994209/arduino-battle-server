@@ -5,11 +5,12 @@ from django.shortcuts import redirect
 
 
 class RequiredLogin(object):
+
     def process_request(self, request):
         if not request.user.is_authenticated():
 
             for path in EXCLUDE_LOGIN_URLS:
                 if request.path.startswith(path):
-                    return None
+                    return
 
             return redirect('login')
